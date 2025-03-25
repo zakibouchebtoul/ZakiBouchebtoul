@@ -54,7 +54,7 @@ function getBaseUrl() {
 }
 function loadPageModule(e) {
   const t = getBaseUrl();
-  import(`/ZakiBouchebtoul/scripts/pages/home-page.js`)
+  import(`/ZakiBouchebtoul/scripts/pages/homepage.js`)
     .then((t) => {
       (currentAnimationModule = t.default || {}),
         "function" == typeof currentAnimationModule.init &&
