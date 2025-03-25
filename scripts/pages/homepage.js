@@ -25,9 +25,6 @@ import initAchievement, {
   killAchievement,
 } from "https://zakibouchebtoul.github.io/ZakiBouchebtoul/scripts/features/homepage/achievement.js";
 import initPattern, { killPattern } from "https://zakibouchebtoul.github.io/ZakiBouchebtoul/scripts/features/homepage/pattern.js";
-import initReducedTeaser, {
-  killReducedTeaser,
-} from "https://zakibouchebtoul.github.io/ZakiBouchebtoul/scripts/features/listPage/reducedTeaser.js";
 import shared from "./shared.js";
 function init() {
   initAwardListHover(),
