@@ -55,7 +55,7 @@ function getBaseUrl() {
 function loadPageModule(e) {
   const t = getBaseUrl();
   const baseUrl = window.location.origin;
-import(`${baseUrl}/scripts/pages/homepage.js`)
+import(`${baseUrl}/ZakiBouchebtoul/scripts/pages/homepage.js`)
 
     .then((t) => {
       (currentAnimationModule = t.default || {}),
