@@ -1,0 +1,847 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="styles/styleprojectpage.css" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div class="global-styles w-embed">
+      <style>
+    
+          /* Make text look crisper and more legible in all browsers */
+         
+          /* Set color style to inherit */
+          .inherit-color * {
+              color: inherit;
+          }
+
+          /* Get rid of top margin on first element in any rich text element */
+          .w-richtext> :not(div):first-child,
+          .w-richtext>div:first-child> :first-child {
+              margin-top: 0 !important;
+          }
+
+          /* Get rid of bottom margin on last element in any rich text element */
+          .w-richtext> :last-child,
+          .w-richtext ol li:last-child,
+          .w-richtext ul li:last-child {
+              margin-bottom: 0 !important;
+          }
+
+          /* Make sure containers never lose their center alignment */
+          .container-medium,
+          .container-small,
+          .container-large {
+              margin-right: auto !important;
+              margin-left: auto !important;
+          }
+
+          /* 
+Make the following elements inherit typography styles from the parent and not have hardcoded values. 
+Important: You will not be able to style for example "All Links" in Designer with this CSS applied.
+Uncomment this CSS to use it in the project. Leave this message for future hand-off.
+*/
+          /*
+a,
+.w-input,
+.w-select,
+.w-tab-link,
+.w-nav-link,
+.w-dropdown-btn,
+.w-dropdown-toggle,
+.w-dropdown-link {
+color: inherit;
+text-decoration: inherit;
+font-size: inherit;
+}
+*/
+          /* Apply "..." after 3 lines of text */
+          .text-style-3lines {
+              display: -webkit-box;
+              overflow: hidden;
+              -webkit-line-clamp: 3;
+              -webkit-box-orient: vertical;
+          }
+
+          /* Apply "..." after 2 lines of text */
+          .text-style-2lines {
+              display: -webkit-box;
+              overflow: hidden;
+              -webkit-line-clamp: 2;
+              -webkit-box-orient: vertical;
+          }
+
+          /* Adds inline flex display */
+          .display-inlineflex {
+              display: inline-flex;
+          }
+
+          /* These classes are never overwritten */
+          .hide {
+              display: none !important;
+          }
+
+          @media screen and (max-width: 991px) {
+
+              .hide,
+              .hide-tablet {
+                  display: none !important;
+              }
+          }
+
+          @media screen and (max-width: 767px) {
+              .hide-mobile-landscape {
+                  display: none !important;
+              }
+          }
+
+          @media screen and (max-width: 479px) {
+              .hide-mobile {
+                  display: none !important;
+              }
+          }
+
+          .margin-0 {
+              margin: 0rem !important;
+          }
+
+          .padding-0 {
+              padding: 0rem !important;
+          }
+
+          .spacing-clean {
+              padding: 0rem !important;
+              margin: 0rem !important;
+          }
+
+          .margin-top {
+              margin-right: 0rem !important;
+              margin-bottom: 0rem !important;
+              margin-left: 0rem !important;
+          }
+
+          .padding-top {
+              padding-right: 0rem !important;
+              padding-bottom: 0rem !important;
+              padding-left: 0rem !important;
+          }
+
+          .margin-right {
+              margin-top: 0rem !important;
+              margin-bottom: 0rem !important;
+              margin-left: 0rem !important;
+          }
+
+          .padding-right {
+              padding-top: 0rem !important;
+              padding-bottom: 0rem !important;
+              padding-left: 0rem !important;
+          }
+
+          .margin-bottom {
+              margin-top: 0rem !important;
+              margin-right: 0rem !important;
+              margin-left: 0rem !important;
+          }
+
+          .padding-bottom {
+              padding-top: 0rem !important;
+              padding-right: 0rem !important;
+              padding-left: 0rem !important;
+          }
+
+          .margin-left {
+              margin-top: 0rem !important;
+              margin-right: 0rem !important;
+              margin-bottom: 0rem !important;
+          }
+
+          .padding-left {
+              padding-top: 0rem !important;
+              padding-right: 0rem !important;
+              padding-bottom: 0rem !important;
+          }
+
+          .margin-horizontal {
+              margin-top: 0rem !important;
+              margin-bottom: 0rem !important;
+          }
+
+          .padding-horizontal {
+              padding-top: 0rem !important;
+              padding-bottom: 0rem !important;
+          }
+
+          .margin-vertical {
+              margin-right: 0rem !important;
+              margin-left: 0rem !important;
+          }
+
+          .padding-vertical {
+              padding-right: 0rem !important;
+              padding-left: 0rem !important;
+          }
+
+          svg * {
+              transform-box: fill-box;
+          }
+      </style>
+  </div>
+    <div class="btn" id="toggle-btn" style="z-index: 4; margin-right: 3rem">
+      <div class="btn-outline btn-outline-1">
+          <div class="btn-outline btn-outline-2"
+              style="display: flex; justify-content: center; align-items: center">
+              <div class="burger-menu" id="hamburger">
+                  <div class="bar"></div>
+                  <div class="bar"></div>
+                  <div class="bar"></div>
+              </div>
+          </div>
+      </div>
+  </div>
+
+  <svg class="shape-overlays" viewBox="0 0 100 100" preserveAspectRatio="none">
+      <path class="shape-overlays__path" fill="#0099ff" fill-opacity="1"
+          d="M0,288L20,288C40,288,80,288,120,266.7C160,245,200,203,240,176C280,149,320,139,360,149.3C400,160,440,192,480,218.7C520,245,560,267,600,256C640,245,680,203,720,160C760,117,800,75,840,69.3C880,64,920,96,960,106.7C1000,117,1040,107,1080,85.3C1120,64,1160,32,1200,58.7C1240,85,1280,171,1320,208C1360,245,1400,235,1420,229.3L1440,224L1440,0L1420,0C1400,0,1360,0,1320,0C1280,0,1240,0,1200,0C1160,0,1120,0,1080,0C1040,0,1000,0,960,0C920,0,880,0,840,0C800,0,760,0,720,0C680,0,640,0,600,0C560,0,520,0,480,0C440,0,400,0,360,0C320,0,280,0,240,0C200,0,160,0,120,0C80,0,40,0,20,0L0,0Z">
+      </path>
+  </svg>
+
+  <div class="menu" id="menun">
+    <div class="primary-menu" style="color: #191919">
+        <div class="menu-container">
+            <div class="wrapper">
+                <div class="menu-item">
+                    <a class="menulinks homepage"><span>I</span>
+                      <div class="buttonproject  is-large"
+                      style="border: #191919; ">
+                      <div class="buttonproject_text-wrap">
+                          <div class="buttonproject_text is-out" style="font-weight: 500 !important;">Home</div>
+                          <div class="buttonproject_text is-in" style="padding-top: 0.2rem;font-weight: 500 !important;">
+                              Home
+                          </div>
+                      </div>
+                  </div></a>
+                    <div class="menu-item-revealer"></div>
+                </div>
+                <div class="menu-item">
+                    <a  class="menulinks workpage"><span>II</span>
+                      <div class="buttonproject "
+                      style="border: #191919; ">
+                      <div class="buttonproject_text-wrap">
+                          <div class="buttonproject_text is-out" style="font-weight: 500 !important;">Work</div>
+                          <div class="buttonproject_text is-in" style="padding-top: 0.2rem;font-weight: 500 !important;">
+                              Work
+                          </div>
+                      </div>
+                  </div></a>
+                    <div class="menu-item-revealer"></div>
+                </div>
+          
+            </div>
+        </div>
+    </div>
+    <div class="secondary-menu">
+        <div class="menu-container">
+            <div class="wrapper">
+                <div class="menu-item">
+                    <a class="faqpage menuright-text">FAQs</a>
+                    <div class="menu-item-revealer"></div>
+                </div>
+                <div class="menu-item">
+                    <a href="#" class="reviewspage menuright-text">Testimonials</a>
+                    <div class="menu-item-revealer"></div>
+                </div>
+                <div class="menu-item">
+                    <a href="#" class="contactpage menuright-text">Contact</a>
+                    <div class="menu-item-revealer"></div>
+                </div>
+            </div>
+            <div class="wrapper">
+                <div class="menu-item" style="font-size: 1rem !important;">
+                    <a href="#"  style="font-size: 1rem !important;">@ zaki bouchebtoul</a>
+                    <div class="menu-item-revealer"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+     <div class="cursor"></div>
+    <div class="project-container" id="project-container">
+        <div class="scrolled-projects" id="scrolledProjects">
+            <!-- Images will be inserted here dynamically -->
+        </div>
+        
+      <div class="phonehide fixed-projectdetails">
+        <div class="column">
+          <div class="divider-line" style="margin-top: 8rem;"></div>
+
+            <div class="projects-names">
+                <div class="projects-name-container" id="projectsList">
+                    <!-- Projects will be inserted here dynamically -->
+                </div>
+                <div class="project-number"></div>
+            </div>
+        </div>
+    
+        <div class="projectname-details" >
+            <div class="viewmore-container" >
+                <div class="viewmore" >
+                    <p class="viewmore-text" >View more</p>
+                    <img src="images/pngs/arrowright.png" alt="" class="arrowimg">
+                </div>
+                <div class="bottomborder-container">
+                    <div class="bottomborder background-line"></div>
+                    <div class="bottomborder animated-line"></div>
+                </div>
+            </div>
+    
+            <div class="projectname-container">
+                <span class="bigname-text" id="projectName">Clinical Management System</span>
+            </div>
+        </div>
+    </div>
+    
+    </div>
+    <div id="expandingDiv"></div>
+    <div id="expandingDiv1">
+        <div class="text-container">
+            <span class="text" id="projectslidename"></span>
+           
+        </div>
+        <div class="grid-container">
+        <div class="grid-item">
+          <div class="text-container">
+            <span class="text" id="projectslidedesc1" style="font-size: 1.5rem"
+              ></span>
+          </div>
+        </div>
+        <div class="grid-item">
+          <div class="text-container">
+            <span class="text" id="projectslidedesc2" style="font-size: 1.5rem"></span>
+          </div>
+        </div>
+      </div>
+      <a class="container">
+        <div class="circle">Live Preview <img src="images/pngs/arrow-top-right.png" alt="" class="icon-small"></div>
+      </a>
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/CSSRulePlugin.min.js"></script>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="scripts/cursor.js" type="module"></script>
+
+    <script src="https://unpkg.com/@studio-freight/lenis@latest"></script>
+
+    <script>
+      gsap.from(".projectname-details", {
+         
+        opacity: 0,
+        y: 50, // Moves it up from 50px below
+        duration: 1.2, delay:0.5,
+        ease: "power2.inOut"
+    });
+    gsap.from(".projects-names", {
+     
+      opacity: 0,
+      y: 50, // Moves it up from 50px below
+      duration: 1.2, delay:0.5,
+      ease: "power2.inOut"
+  });
+  gsap.from(".scrolled-projects", {
+     
+    opacity: 0,
+    y: 50, // Moves it up from 50px below
+    duration: 1.2,
+    delay:0.5,
+    ease: "power2.inOut"
+});
+
+      // Initialize Lenis
+      document.addEventListener('DOMContentLoaded', () => {
+        setTimeout(() => {
+          const lenis = new Lenis({
+            duration: 1.2, // Adjust speed of smooth scrolling
+            easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)), // Smooth ease
+            smooth: true
+          });
+    
+          function raf(time) {
+            lenis.raf(time);
+            requestAnimationFrame(raf);
+          }
+          requestAnimationFrame(raf);
+    
+          lenis.on('scroll', ScrollTrigger.update);
+          function enableScroll() {
+            lenis.start();
+        }
+        function disableScroll() {
+          lenis.stop();
+      }
+      
+        function expandDiv() {
+      
+    
+            disableScroll()        
+            gsap.to("#expandingDiv", {
+                height: "100vh",
+                duration: 1,
+                ease: "power2.out"
+            });
+        
+            gsap.to("#expandingDiv1", {
+                height: "100vh",
+                duration: 1.1,
+                ease: "power2.out"
+            });
+        
+            
+            gsap.set(".text", { y: "100%" });
+        
+            gsap.to(".text", {
+                y: 0,
+                duration: 0.8,
+                ease: "power3.out",
+                delay: 0.4
+            });
+        
+            // Push a new state into history
+            history.pushState({ expanded: true }, "", "#expanded");
+        }
+        
+        function collapseDiv() {
+            gsap.to("#expandingDiv", {
+                height: "0vh",
+                duration: 1.15,
+                ease: "power2.inOut"
+            });
+        
+            gsap.to("#expandingDiv1", {
+                height: "0vh",
+                duration: 1,
+                ease: "power2.inOut"
+            });
+        
+            // Move text back down
+            gsap.to(".text", {
+                y: "100%",
+                duration: 0.5,
+                ease: "power3.inOut",
+                delay: 0
+            });
+        
+            // Re-enable scrolling when collapsing
+            enableScroll();
+        }    
+        document.querySelector(".viewmore-container").addEventListener("click", expandDiv);
+        document.querySelectorAll(".viewmore-container1").forEach((element) => {
+            element.addEventListener("click", expandDiv);
+        });
+        
+        window.addEventListener("popstate", function(event) {
+          collapseDiv();
+      });
+        }, 2000); // Delay execution by 2 seconds
+      });
+  
+   
+    
+    </script>
+    <script>
+     
+      const projectsData = [
+        {
+          "number": "01",
+          "name": "Clinical Management System",
+          "description": `A Clinical Management System (CMS) is a software solution
+                designed to streamline healthcare operations, improve patient
+                care, and enhance administrative efficiency. It integrates various
+                functionalities such as patient records management, appointment
+                scheduling, billing, and inventory management.`,
+          "description1": `This system enhances healthcare services by reducing paperwork,
+                minimizing errors, and improving accessibility to patient data. It
+                is essential for hospitals, clinics, and private practices aiming
+                for digital transformation.`,
+          "image": "https://mir-s3-cdn-cf.behance.net/project_modules/fs/8a9253212437861.6734d88108f9d.jpg",
+          "link": "https://dribbble.com/69pixels"
+      
+        },
+        {
+          "number": "02",
+          "name": "Chatbot App",
+          "description": "Zassistant is an AI-powered chatbot mobile app built using the Gemini API. It provides real-time news updates, personalized advice, and weather forecasts, tailoring recommendations based on current conditions. Users can interact through text or voice input for a natural conversation experience.",
+          "description1": "The app also supports image processing, allowing users to upload images and receive AI-generated insights. With its advanced capabilities and user-friendly interface, Zassistant offers a seamless and intelligent personal assistant experience.",
+          "image": "https://mir-s3-cdn-cf.behance.net/project_modules/2800_opt_1/073d73216643083.6783bd5cabc01.png",
+          "link": ""
+          
+        },
+        {
+          "number": "03",
+          "name": "Professional Portfolio",
+          "description": "This professional portfolio is a cutting-edge web experience designed to showcase skills and projects with mesmerizing animations and seamless interactions. Built with modern web technologies, it features dynamic transitions, fluid motion effects, and immersive scroll-based animations that bring the content to life.",
+          "description1": "Every detail, from hover effects to page transitions, is crafted for a smooth and engaging user experience. With a perfect blend of creativity and performance optimization, this portfolio is not just a showcase—it's an interactive journey that leaves a lasting impression.",
+          "image": "https://mir-s3-cdn-cf.behance.net/project_modules/2800_opt_1/c36efe206388275.66cc18935b63d.png",
+          "link": ""
+        },   {
+            "number": "04",
+            "name": "Go Viral Agency",
+            "description": "This agency website is a sleek and modern platform designed to showcase services, expertise, and past projects with a strong visual impact. Developed using Webflow, it features a clean and professional design with smooth animations, intuitive navigation, and an engaging user experience.",
+            "description1": "With a focus on brand identity and storytelling, the website highlights the agency’s unique approach, client success stories, and service offerings. Optimized for performance and responsiveness, it ensures seamless browsing across all devices, making a lasting impression on potential clients and partners.",
+            "image": "https://mir-s3-cdn-cf.behance.net/project_modules/2800_opt_1/c36efe206388275.66cc18935b63d.png",
+            "link": ""
+          }, 
+      ];
+  
+    
+        function loadProjects() {
+            const projectsList = document.getElementById("projectsList");
+            const projectNameDisplay = document.getElementById("projectName");
+            const scrolledProjects = document.getElementById("scrolledProjects");
+        
+            projectsList.innerHTML = ""; // Clear any existing content
+            scrolledProjects.innerHTML = ""; // Clear images before adding new ones
+        
+            projectsData.forEach((project, index) => {
+                // Create project item
+                const projectItem = document.createElement("div");
+                projectItem.classList.add("project-items");
+                projectItem.innerHTML = ` <p class="item-text text-padding">
+                        <span class="bracket-left">[</span>
+                        N.${project.number}
+                        <span class="bracket-right">]</span>
+                    </p>
+                    <p class="item-text">${project.name}</p>`
+                   
+                ;
+        
+                
+                const projectContainer = document.createElement("div");
+                projectContainer.classList.add("project-container");
+                
+                // Create Image
+                const projectImage = document.createElement("img");
+                projectImage.src = project.image;
+                projectImage.alt = project.name;
+                projectImage.classList.add("imagesstyle");
+                
+                // Create Project Details Section
+                const projectDetails = document.createElement("div");
+                projectDetails.classList.add("projectname-details1");
+                
+                // Create View More Section
+                const viewMoreContainer = document.createElement("div");
+                viewMoreContainer.classList.add("viewmore-container1");
+                
+                const viewMore = document.createElement("div");
+                viewMore.classList.add("viewmore");
+                
+                const viewMoreText = document.createElement("p");
+                viewMoreText.classList.add("viewmore-text");
+                viewMoreText.textContent = "View more";
+                
+                const arrowImg = document.createElement("img");
+                arrowImg.src = "images/pngs/arrowright.png";
+                arrowImg.alt = "";
+                arrowImg.classList.add("arrowimg");
+                
+                // Append "View more" text and arrow image inside the viewmore div
+                viewMore.appendChild(viewMoreText);
+                viewMore.appendChild(arrowImg);
+                
+                // Create Bottom Border Section
+                const bottomBorderContainer = document.createElement("div");
+                bottomBorderContainer.classList.add("bottomborder-container");
+                
+                const bottomBorder = document.createElement("div");
+                bottomBorder.classList.add("bottomborder", "background-line");
+                
+                const animatedBorder = document.createElement("div");
+                animatedBorder.classList.add("bottomborder", "animated-line");
+                
+                // Append borders inside bottom border container
+                bottomBorderContainer.appendChild(bottomBorder);
+                bottomBorderContainer.appendChild(animatedBorder);
+                
+                // Append View More Section and Bottom Border inside View More Container
+                viewMoreContainer.appendChild(viewMore);
+                viewMoreContainer.appendChild(bottomBorderContainer);
+                
+                // Create Project Name Section
+                const projectNameContainer = document.createElement("div");
+                projectNameContainer.classList.add("projectname-container");
+                
+                const projectName = document.createElement("span");
+                projectName.classList.add("bigname-text1");
+               
+                projectName.textContent = project.name; // Assuming 'project.name' contains the project name
+                
+                // Append project name inside the project name container
+                projectNameContainer.appendChild(projectName);
+                
+                // Append View More Section and Project Name Container inside Project Details
+                projectDetails.appendChild(viewMoreContainer);
+                projectDetails.appendChild(projectNameContainer);
+                
+                // Append image and project details to the main project container
+                projectContainer.appendChild(projectImage);
+                projectContainer.appendChild(projectDetails);
+                
+                // Append the final project container to the parent div
+                scrolledProjects.appendChild(projectContainer);
+                
+        
+                // Click event to update project details and log to the console
+                projectItem.addEventListener("click", () => {
+                    projectNameDisplay.textContent = project.name;
+                });
+        
+                projectsList.appendChild(projectItem);
+            });
+        }
+      
+        // Listen for back navigation
+     
+        document.addEventListener("DOMContentLoaded", loadProjects);
+        $(".container").mouseleave(function (e) {
+            TweenMax.to(this, 0.3, { height: 150, width: 250 });
+            TweenMax.to(".circle", 0.3, { scale: 1, x: 0, y: 0 });
+          });
+          
+          $(".container").mouseenter(function (e) {
+            TweenMax.to(this, 0.3, { height: 200, width: 200 });
+            TweenMax.to(".circle", 0.3, { scale: 1.3 });
+          });
+          
+          $(".container").mousemove(function (e) {
+            callParallax(e);
+          });
+          
+          function callParallax(e) {
+            parallaxIt(e, ".circle", 80);
+          }
+          
+          function parallaxIt(e, target, movement) {
+            var $this = $(".container");
+            var relX = e.pageX - $this.offset().left;
+            var relY = e.pageY - $this.offset().top;
+          
+            TweenMax.to(target, 0.3, {
+              x: ((relX - $this.width() / 2) / $this.width()) * movement,
+              y: ((relY - $this.height() / 2) / $this.height()) * movement,
+              ease: Power2.easeOut
+            });
+          }
+    </script>
+  
+        
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const items = document.querySelectorAll(".project-items");
+            const images = document.querySelectorAll(".imagesstyle");
+            const projectNumber = document.querySelector(".project-number");
+            projectNumber.innerHTML = "01";
+            const projectNameText = document.querySelector(".bigname-text");
+            const projectslidename = document.getElementById("projectslidename");
+            const projectslidedesc1 = document.getElementById("projectslidedesc1");
+            const projectslidedesc2 = document.getElementById("projectslidedesc2");
+             
+              // Retrieve last selected index from localStorage
+              let selectedIndex = localStorage.getItem("selectedIndex") == null ? 0 :localStorage.getItem("selectedIndex") ;
+
+              if (selectedIndex !== null) {
+                  selectedIndex = parseInt(selectedIndex);
+                  setTimeout(() => {
+                      images[selectedIndex].scrollIntoView({ behavior: "smooth", block: "center" });
+                  }, 100); // Small delay to ensure page renders properly first
+              }else{
+                selectedIndex = 0;
+                  setTimeout(() => {
+                      images[selectedIndex].scrollIntoView({ behavior: "smooth", block: "center" });
+                  }, 100); // Small delay to ensure page renders properly first
+              }
+              
+
+            // Scroll to image when clicking project name
+            items.forEach((item, index) => {
+                item.addEventListener("click", function () {
+                    images[index].scrollIntoView({ behavior: "smooth", block: "center" });
+                    localStorage.setItem("selectedIndex", index); // Store selected index
+                });
+            });
+        
+            // Detect scrolling and update project name dynamically
+            function updateActiveProject() {
+                let newSelectedIndex = 0;
+                
+             
+        images.forEach((img, index) => {
+            let rect = img.getBoundingClientRect();
+            if (rect.top <= window.innerHeight / 2 && rect.bottom >= window.innerHeight / 2) {
+                newSelectedIndex = index ;
+                        }
+        });
+                if (newSelectedIndex !== selectedIndex) {
+                    selectedIndex = newSelectedIndex;
+                    localStorage.setItem("selectedIndex", selectedIndex); // Save new index
+                   
+
+                }
+        
+                items.forEach((el, i) => {
+                    if (i === selectedIndex) { 
+                        const updatedProject = projectsData[i];        
+                        projectslidename.textContent = updatedProject.name;   
+                        projectNumber.textContent = updatedProject.number;
+                       
+                        projectslidedesc1.textContent = updatedProject.description;
+                        projectslidedesc2.textContent = updatedProject.description1;
+                                 
+                const linkElement = document.querySelector(".container"); // Select the <a> element
+                linkElement.href = updatedProject.link; // Set the href attribute
+                linkElement.target = "_blank"; // Open in a new tab (optional)
+                        gsap.to(el.querySelector(".bracket-left"), { opacity: 1, duration: 0.3 });
+                        gsap.to(el.querySelector(".bracket-right"), { opacity: 1, duration: 0.3 });
+        
+                        let selectedNumber = el.querySelector(".text-padding").textContent.trim().replace(/\D/g, "");
+                        let selectedProjectName = el.querySelector(".item-text:last-child").textContent.trim();
+        
+                    } else {
+                        el.classList.remove("active");
+                        gsap.to(el.querySelector(".bracket-left"), { opacity: 0, duration: 0.3 });
+                        gsap.to(el.querySelector(".bracket-right"), { opacity: 0, duration: 0.3 });
+                    }
+                    
+                    if (i === selectedIndex) { 
+                        if (!el.classList.contains("active")) {
+                            el.classList.add("active");
+            
+                            let selectedNumber = el.querySelector(".text-padding").textContent.trim().replace(/\D/g, "");
+                            
+                            let selectedProjectName = el.querySelector(".item-text:last-child").textContent.trim();
+                           
+                            // Animate number without making it disappear completely
+                            gsap.to(projectNumber, {
+                                opacity: 0.1, x: -10, filter: "blur(2px)", duration: 0.3,
+                                onComplete: () => {
+                                 
+                               
+                                    gsap.to(projectNumber, { 
+                                        opacity: 1, x: 0, filter: "blur(0px)", duration: 0.1, ease: "power2.out" 
+                                    });
+                                }
+                            });
+            
+                            animateText(selectedProjectName);
+                        }
+                    } else {
+                        el.classList.remove("active");
+                    }
+                });
+            }
+            
+            function animateText(newText) {
+                const spans = projectNameText.querySelectorAll("span");
+            
+                // Instead of making the text disappear, animate it smoothly
+                gsap.to(spans, {
+                    y: -5, opacity: 0.5, filter: "blur(2px)", duration: 0.1, stagger: 0.05,
+                    onComplete: () => {
+                        projectNameText.innerHTML = ""; // Update text *after* animation
+                        let words = newText.split(" ");
+                        words.forEach((word) => {
+                            let span = document.createElement("span");
+                            span.textContent = word;
+                            span.style.display = "inline-block";
+                            span.style.marginRight = "10px";
+                            projectNameText.appendChild(span);
+                        });
+            
+                        const newSpans = projectNameText.querySelectorAll("span");
+            
+                        gsap.fromTo(newSpans, 
+                            { y: 5, opacity: 0.5, filter: "blur(2px)" }, 
+                            { y: 0, opacity: 1, filter: "blur(0px)", stagger: 0.05, duration: 0.5, ease: "power2.out" }
+                        );
+                    }
+                });
+            }
+            
+            // Listen to scroll events
+            window.addEventListener("scroll", updateActiveProject);
+        });
+        
+          
+      gsap.fromTo(
+        ".divider-line",
+        { backgroundColor: "#fcfcfc" },
+        { backgroundColor: "#282828", duration: 1.5, ease: "power2.out" }
+      );
+
+      gsap.from(".divider-line", {
+        scaleX: 0,
+        scaleY: 0,
+        opacity: 0,
+        duration: 1,
+        transformOrigin: "center center",
+        ease: "power2.out",
+      });
+
+      const viewMore = document.querySelector(".viewmore");
+      const arrowImg = document.querySelector(".arrowimg");
+      
+      // Initially, the arrow is in a ">" shape (trapezoid-like cut)
+      gsap.set(arrowImg, { clipPath: "polygon(0% 0%, 70% 0%, 100% 50%, 70% 100%, 0% 100%)" });
+      
+      viewMore.addEventListener("mouseenter", () => {
+        // Expand to a full rectangle on hover
+        gsap.to(arrowImg, { 
+          clipPath: "polygon(50% 50%, 50% 50%, 100% 100%, 100% 100%)", 
+          duration: 0.5, 
+          ease: "power2.out" 
+        });
+      });
+      
+      viewMore.addEventListener("mouseleave", () => {
+        // Keep it as a rectangle after hover (or revert to ">" shape if needed)
+        gsap.to(arrowImg, { 
+          clipPath: "polygon(0% 0%, 70% 0%, 100% 50%, 70% 100%, 0% 100%)", 
+          duration: 0.5, 
+          ease: "power2.out" 
+        });
+      });
+      const animatedLine = document.querySelector(".animated-line");
+
+      viewMore.addEventListener("mouseenter", () => {
+        gsap.killTweensOf(animatedLine); // Stop any ongoing animation
+        gsap.set(animatedLine, { width: "0%", clipPath: "inset(0 0 0 0)" }); // Reset before animating
+        gsap.to(animatedLine, { 
+          width: "100%", 
+          duration: 0.5, 
+          ease: "power2.out" 
+        });
+      });
+      
+      viewMore.addEventListener("mouseleave", () => {
+        gsap.killTweensOf(animatedLine); // Stop any ongoing animation
+        gsap.to(animatedLine, { 
+          clipPath: "inset(0 0 0 100%)", // Moves the hidden part from right to left
+          duration: 0.5, 
+          ease: "power2.inOut",
+          onComplete: () => {
+            gsap.set(animatedLine, { width: "0%", clipPath: "inset(0 100% 0 0)" }); // Resets correctly for next hover
+          }
+        });
+      });
+      
+      
+    </script>
+  
+    <script src="scripts/script.js"></script>
+    
+ 
+  </body>
+</html>  

@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Request Ptoject</title>
+    <link rel="stylesheet" href="/styles/resqueststyle.css">
+</head>
+
+<body>
+    <div class="cursor"></div>
+
+    <div class="btn" id="toggle-btn" style="z-index: 4; margin-right: 3rem">
+        <div class="btn-outline btn-outline-1">
+            <div class="btn-outline btn-outline-2"
+                style="display: flex; justify-content: center; align-items: center">
+                <div class="burger-menu" id="hamburger">
+                    <div class="bar"></div>
+                    <div class="bar"></div>
+                    <div class="bar"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+  
+    <svg class="shape-overlays" viewBox="0 0 100 100" preserveAspectRatio="none">
+        <path class="shape-overlays__path" fill="#0099ff" fill-opacity="1"
+            d="M0,288L20,288C40,288,80,288,120,266.7C160,245,200,203,240,176C280,149,320,139,360,149.3C400,160,440,192,480,218.7C520,245,560,267,600,256C640,245,680,203,720,160C760,117,800,75,840,69.3C880,64,920,96,960,106.7C1000,117,1040,107,1080,85.3C1120,64,1160,32,1200,58.7C1240,85,1280,171,1320,208C1360,245,1400,235,1420,229.3L1440,224L1440,0L1420,0C1400,0,1360,0,1320,0C1280,0,1240,0,1200,0C1160,0,1120,0,1080,0C1040,0,1000,0,960,0C920,0,880,0,840,0C800,0,760,0,720,0C680,0,640,0,600,0C560,0,520,0,480,0C440,0,400,0,360,0C320,0,280,0,240,0C200,0,160,0,120,0C80,0,40,0,20,0L0,0Z">
+        </path>
+    </svg>
+  
+    <div class="menu" id="menun">
+      <div class="primary-menu" style="color: #191919">
+          <div class="menu-container">
+              <div class="wrapper">
+                  <div class="menu-item">
+                      <a class="menulinks homepage"><span>I</span>
+                        <div class="buttonproject  is-large"
+                        style="border: #191919; ">
+                        <div class="buttonproject_text-wrap">
+                            <div class="buttonproject_text is-out" style="font-weight: 500 !important;">Home</div>
+                            <div class="buttonproject_text is-in" style="padding-top: 0.2rem;font-weight: 500 !important;">
+                                Home
+                            </div>
+                        </div>
+                    </div></a>
+                      <div class="menu-item-revealer"></div>
+                  </div>
+                  <div class="menu-item">
+                      <a  class="menulinks workpage"><span>II</span>
+                        <div class="buttonproject "
+                        style="border: #191919; ">
+                        <div class="buttonproject_text-wrap">
+                            <div class="buttonproject_text is-out" style="font-weight: 500 !important;">Work</div>
+                            <div class="buttonproject_text is-in" style="padding-top: 0.2rem;font-weight: 500 !important;">
+                                Work
+                            </div>
+                        </div>
+                    </div></a>
+                      <div class="menu-item-revealer"></div>
+                  </div>
+            
+              </div>
+          </div>
+      </div>
+      <div class="secondary-menu">
+          <div class="menu-container">
+            <div class="wrapper">
+                <div class="menu-item">
+                    <a class="faqpage menuright-text">FAQs</a>
+                    <div class="menu-item-revealer"></div>
+                </div>
+                <div class="menu-item">
+                    <a href="#" class="reviewspage menuright-text">Testimonials</a>
+                    <div class="menu-item-revealer"></div>
+                </div>
+                <div class="menu-item">
+                    <a href="#" class="contactpage menuright-text">Contact</a>
+                    <div class="menu-item-revealer"></div>
+                </div>
+            </div>
+              <div class="wrapper">
+                  <div class="menu-item" style="font-size: 1rem !important;">
+                      <a href="#"  style="font-size: 1rem !important;">@ zaki bouchebtoul</a>
+                      <div class="menu-item-revealer"></div>
+                  </div>
+              </div>
+          </div>
+      </div>
+  </div>
+
+    <div class="column">
+        <span class="ml9">
+            <span>
+                <b class="letters1">Request Project</b>
+            </span>
+        </span>
+
+        <div class="row">
+            <div class="column inputmargin" style="width: 100%;">
+                <span class="ml9 margin-topcusttom"
+                    style="font-size: 1rem; text-align: start; color: #f7f7f7; justify-content: start; font-weight: 100;">
+                    <span>
+                        <b class="letters1" style="font-weight: 900; text-align: center;">Full Name *</b>
+                    </span>
+                </span>
+                <div class="input-container">
+                    <input type="text" placeholder="Enter your full name..." id="fullname"/>
+                    <div class="lineform"></div>
+                </div>
+            </div>
+            <div class="column inputmargin" style="width: 100%;">
+                <span class="ml9 margin-topcusttom"
+                    style="font-size: 1rem; text-align: start; color: #f7f7f7; justify-content: start; font-weight: 100;">
+                    <span>
+                        <b class="letters1" style="font-weight: 900; text-align: center;">
+                            Email Address *</b>
+                    </span>
+                </span>
+                <div class="input-container">
+                    <input type="email" placeholder="Enter your email..." id="emailrequest"/>
+                    <div class="lineform"></div>
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="column inputmargin" style="width: 100%;">
+                <span class="ml9 margin-topcusttom"
+                    style="font-size: 1rem; text-align: start; color: #f7f7f7; justify-content: start; font-weight: 100;">
+                    <span>
+                        <b class="letters1" style="font-weight: 900; text-align: center;">Phone Number *</b>
+                    </span>
+                </span>
+                <div class="input-container">
+                    <input type="phone" placeholder="Enter your phone number..." id="phonerequest"/>
+                    <div class="lineform"></div>
+                </div>
+            </div>
+            <div class="column inputmargin" style="width: 100%;">
+                <span class="ml9 margin-topcusttom"
+                    style="font-size: 1rem; text-align: start; color: #f7f7f7; justify-content: start; font-weight: 100;">
+                    <span>
+                        <b class="letters1" style="font-weight: 900; text-align: center;">Project Type * </b>
+                    </span>
+                </span>
+                <div class="input-container">
+                    <input type="text" placeholder="Enter your Project type website, mobile, software..." id="projecttype"/>
+                    <div class="lineform"></div>
+                </div>
+            </div>
+        </div>
+        <div class="column inputmargin" style="width: 86%"">
+            <span class="ml9 margin-topcusttom"
+                style="font-size: 1rem; text-align: start; color: #f7f7f7; justify-content: start; font-weight: 100;">
+                <span>
+                    <b class="letters1" style="font-weight: 900; text-align: center;">Reference Websites/Projects (Optional)</b>
+                </span>
+            </span>
+            <div class="input-container">
+                <input type="text" placeholder="Enter your URL referance..." id="referance"/>
+                <div class="lineform"></div>
+            </div>
+        </div>  
+        <div class="rowcheckbox" style="margin-top: 4rem;margin-bottom:0.5rem;">
+            <div class="checkbox-wrapper-11">
+                <input id="individual" type="checkbox" name="r" value="individual">
+                <label for="individual">individual</label>
+            </div>
+            <span class="divider-horizontal">|||</span>
+            <div class="checkbox-wrapper-11">
+                <input id="organization" type="checkbox" name="r" value="organization">
+                <label for="organization">Organization</label>
+            </div>
+        </div>
+
+
+
+
+        <div class="row">
+            <div class="input-container message">
+                <span class="message ml9"
+                    style=" text-align: start; color: #f7f7f7; justify-content: center; font-weight: 100;margin-left: 0rem;margin:1rem;">
+                    <span>
+                        <b class="letters1" style="font-weight: 900; text-align: center;">Let me know your project
+                            details</b>
+                    </span>
+                </span>
+                <textarea placeholder="Enter your message" id="messagerequest"></textarea>
+                <div class="lineform"></div>
+            </div>
+        </div>
+
+    </div>
+    <div class="line"></div>
+    <div class="text-container">
+  <span>Your</span> <span>submission</span> <span>was</span> <span>successful..</span>
+    </div>
+
+    <a class="container" id="submitButtonrequest">
+        <div class="circle">Submit<img src="images/gifs/sent.gif" alt="" class="icon-small" style="margin-left: 1rem;position:relative; top:3px"></div>
+      </a>
+      <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/CSSRulePlugin.min.js"></script>    <script src="https://unpkg.com/@studio-freight/lenis@latest"></script>
+
+    <script>
+      // Initialize Lenis
+      const lenis = new Lenis({
+        duration: 1.2, // Adjust speed of smooth scrolling
+        easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)), // Smooth ease
+        smooth: true
+      });
+    
+      function raf(time) {
+        lenis.raf(time);
+        requestAnimationFrame(raf);
+      }
+      requestAnimationFrame(raf);
+    
+      // Update GSAP ScrollTrigger to work with Lenis
+      lenis.on('scroll', ScrollTrigger.update);
+    
+    
+    
+    </script>
+    <script src="/scripts/requestscript.js" type="module"></script>
+    <script src="/scripts/cursor.js" type="module"></script>
+    <script src="/scripts/script.js"></script>
+    <script src="/scripts/firebase.js" type="module"></script>
+   
+
+</body>
+
+</html>

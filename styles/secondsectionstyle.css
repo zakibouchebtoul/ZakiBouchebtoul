@@ -1,0 +1,316 @@
+.cb-cursor {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 150;
+    contain: layout style size;
+    pointer-events: none;
+    will-change: transform;
+    transition: opacity .3s, color .4s;
+    color: #fff;
+    mix-blend-mode: exclusion
+}
+
+.cb-cursor:before {
+    content: "";
+    position: absolute;
+    top: -24px;
+    left: -24px;
+    display: block;
+    width: 48px;
+    height: 48px;
+    transform: scale(0);
+    background: currentColor;
+    border-radius: 50%;
+    transition: transform .3s ease-in-out, opacity .1s
+}
+
+.cb-cursor.-normal,
+.cb-cursor.-text {
+    color: #fff
+}
+
+.cb-cursor.-normal .cb-cursor-text,
+.cb-cursor.-text .cb-cursor-text {
+    padding: 5px;
+    color: #000
+}
+
+.cb-cursor.-normal:before,
+.cb-cursor .cb-cursor.-text:before {
+    background: currentColor
+}
+
+.cb-cursor.-inverse {
+    color: #fff
+}
+
+.cb-cursor.-visible:before {
+    transform: scale(0.2)
+}
+
+.cb-cursor.-visible.-active:before {
+    transform: scale(0.1);
+    transition-duration: .2s
+}
+
+.cb-cursor.-pointer:before {
+    transform: scale(0.4);
+    opacity: .75
+}
+
+.cb-cursor.-text:before {
+    opacity: .85;
+    transform: scale(1.4)
+}
+
+.cb-cursor.-text .cb-cursor-text {
+    opacity: 1;
+    transform: scale(1)
+}
+
+.cb-cursor.-text.-active:before {
+    transform: scale(1.2);
+    transition-duration: .2s
+}
+
+.cb-cursor.-opaque:before {
+    transform: scale(1.32)
+}
+
+.cb-cursor.-opaque.-active:before {
+    transform: scale(1)
+}
+
+.cb-cursor.-lg:before {
+    transform: scale(1)
+}
+
+.cb-cursor.-hidden:before {
+    transform: scale(0)
+}
+
+.cb-cursor-text {
+    position: absolute;
+    top: -18px;
+    left: -18px;
+    width: 36px;
+    height: 36px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transform: scale(0) rotate(10deg);
+    opacity: 0;
+    color: #fff;
+    font-size: 16px;
+    line-height: 20px;
+    text-align: center;
+    letter-spacing: -0.01em;
+    transition: opacity .4s, transform .3s
+}
+
+@supports(mix-blend-mode: exclusion) {
+
+    .cb-cursor.-exclusion,
+    .cb-cursor.-opaque {
+        mix-blend-mode: exclusion
+    }
+}
+
+@supports(mix-blend-mode: exclusion) {
+
+    .cb-cursor.-exclusion:before,
+    .cb-cursor.-opaque:before {
+        background: #fff
+    }
+}
+
+[data-hero] [data-hero-element=headline] .char {
+    transform: translate(0px, 100%)
+}
+
+[data-hero=home] [data-hero-element=paragraph] .line {
+    clip-path: polygon(0% 0%, 100% 0%, 100% 0%, 0% 0%)
+}
+
+[data-hero=home] [data-hero-element=video-outer] {
+    clip-path: polygon(0% 100%, 100% 100%, 100% 100%, 0% 100%)
+}
+
+[data-hero=home] [data-hero-element=teaser-wrap] {
+    clip-path: polygon(0 50%, 100% 50%, 100% 50%, 0 50%)
+}
+
+[data-hero=home] [data-hero-element=teaser-wrap] img {
+    scale: .95
+}
+
+[data-hero=home] [data-hero-element=trust] {
+    transform: translate(0px, 200%)
+}
+
+@media(max-width: 478px) {
+    [data-hero=home] [data-hero-element=trust] {
+        transform: translate(0px, 750%)
+    }
+}
+
+[data-hero=home] [data-hero-element=cta] {
+    clip-path: polygon(0% 100%, 100% 100%, 100% 100%, 0% 100%)
+}
+
+[data-hero=home] [data-hero-element=scroll] {
+    transform: translate(0px, 100%)
+}
+
+[data-hero=home] [data-pattern=element-wrap] {
+    transform: scale(0)
+}
+
+[data-hero=detail] [data-flip-element=end]:not(.is-hidden) {
+    clip-path: polygon(0% 100%, 100% 100%, 100% 100%, 0% 100%)
+}
+
+[data-animate=detail-nav-wrap] {
+    transform: translate(0px, -125%)
+}
+
+#contact-form .just-validate-error-label {
+    font-size: .8rem
+}
+
+#contact-form [data-form] {
+    transition: .1s ease-out;
+    transition-property: color, background-color
+}
+
+#contact-form [data-form=select-wrap] [data-form=select-field]:checked+[data-form=select-text] {
+    background-color: #6f4bff;
+    color: #efefef;
+    mix-blend-mode: normal
+}
+
+#contact-form [data-form=radio-wrap] [data-form=radio-field]:checked+[data-form=radio-text] {
+    background-color: #6f4bff;
+    color: #efefef;
+    mix-blend-mode: normal
+}
+
+[data-animate=form-feedback-wrap] [data-animate=feedback-logo-path-left] {
+    transform: translateX(-10rem)
+}
+
+[data-animate=form-feedback-wrap] [data-animate=feedback-logo-path-right] {
+    transform: translateX(10rem)
+}
+
+.js-badge {
+    position: fixed;
+    top: 32px;
+    left: 32px;
+    border-radius: 16px;
+    background-color: #add8e6;
+    color: #000;
+    padding: 8px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+    line-height: 1.2;
+    font-size: 14px;
+    cursor: pointer;
+    z-index: 10000;
+    transition: background-color .1s ease-out
+}
+
+::selection {
+    color: #cecbdc;
+    background: #6f4bff
+}
+
+.js-badge:hover {
+    background-color: #e489c1
+}
+
+[data-animate=letter-switch] .char-wrap {
+    display: inline-block;
+    position: relative
+}
+
+[data-animate=letter-switch] .char {
+    position: relative
+}
+
+[data-animate=letter-switch] .swap-letter {
+    position: absolute;
+    left: 0;
+    top: 0
+}
+
+.line {
+    clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%)
+}
+
+.nav_logo-wrap .text-size-logo::first-letter {
+    transform: translateX(50px)
+}
+
+.img-wrap:hover .us-canvas-wrap {
+    transform: scale(1.3);
+    cursor: none
+}
+
+.img-wrap .us-canvas-wrap {
+    transition: transform 1s cubic-bezier(0.77, 0, 0.175, 1);
+    transform: scale(1.2)
+}
+
+.img-wrap canvas {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0%;
+    left: 0%;
+    bottom: 0%;
+    right: 0%
+}
+
+body.scrollflip-relative [tr-scrollflip-sticky=true] {
+    position: relative
+}
+
+svg:not(:root) {
+    overflow: visible
+}
+
+.fixed {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: -1
+}
+
+.is-flipping {
+    position: relative;
+    z-index: 1
+}
+
+[data-flip-element=end].is-hidden {
+    opacity: 0
+}
+
+html.lenis {
+  height: auto;
+}
+.lenis.lenis-smooth {
+  scroll-behavior: auto;
+}
+.lenis.lenis-smooth [data-lenis-prevent] {
+  overscroll-behavior: contain;
+}
+.lenis.lenis-stopped {
+  overflow: hidden;
+}
+

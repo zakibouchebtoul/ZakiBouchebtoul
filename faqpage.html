@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>GSAP Border & Text Animation</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <link rel="stylesheet" href="/styles/faqstyle.css">
+
+</head>
+<body>
+    <div class="cursor"></div>
+
+    <div class="btn" id="toggle-btn" style="z-index: 4; margin-right: 3rem">
+        <div class="btn-outline btn-outline-1">
+            <div class="btn-outline btn-outline-2"
+                style="display: flex; justify-content: center; align-items: center">
+                <div class="burger-menu" id="hamburger">
+                    <div class="bar"></div>
+                    <div class="bar"></div>
+                    <div class="bar"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <svg class="shape-overlays" viewBox="0 0 100 100" preserveAspectRatio="none">
+        <path class="shape-overlays__path" fill="#0099ff" fill-opacity="1"
+            d="M0,288L20,288C40,288,80,288,120,266.7C160,245,200,203,240,176C280,149,320,139,360,149.3C400,160,440,192,480,218.7C520,245,560,267,600,256C640,245,680,203,720,160C760,117,800,75,840,69.3C880,64,920,96,960,106.7C1000,117,1040,107,1080,85.3C1120,64,1160,32,1200,58.7C1240,85,1280,171,1320,208C1360,245,1400,235,1420,229.3L1440,224L1440,0L1420,0C1400,0,1360,0,1320,0C1280,0,1240,0,1200,0C1160,0,1120,0,1080,0C1040,0,1000,0,960,0C920,0,880,0,840,0C800,0,760,0,720,0C680,0,640,0,600,0C560,0,520,0,480,0C440,0,400,0,360,0C320,0,280,0,240,0C200,0,160,0,120,0C80,0,40,0,20,0L0,0Z">
+        </path>
+    </svg>
+
+    <div class="menu" id="menun">
+        <div class="primary-menu" style="color: #191919">
+            <div class="menu-container">
+                <div class="wrapper">
+                    <div class="menu-item">
+                        <a class="menulinks homepage"><span>I</span>
+                          <div class="buttonproject  is-large"
+                          style="border: #191919; font-size: 7rem;">
+                          <div class="buttonproject_text-wrap">
+                              <div class="buttonproject_text is-out" style="font-weight: 500 !important;">Home</div>
+                              <div class="buttonproject_text is-in" style="padding-top: 0.2rem;font-weight: 500 !important;">
+                                  Home
+                              </div>
+                          </div>
+                      </div></a>
+                        <div class="menu-item-revealer"></div>
+                    </div>
+                    <div class="menu-item">
+                        <a  class="menulinks workpage"><span>II</span>
+                          <div class="buttonproject "
+                          style="border: #191919; font-size: 7rem;">
+                          <div class="buttonproject_text-wrap">
+                              <div class="buttonproject_text is-out" style="font-weight: 500 !important;">Work</div>
+                              <div class="buttonproject_text is-in" style="padding-top: 0.2rem;font-weight: 500 !important;">
+                                  Work
+                              </div>
+                          </div>
+                      </div></a>
+                        <div class="menu-item-revealer"></div>
+                    </div>
+              
+                </div>
+            </div>
+        </div>
+        
+        <div class="secondary-menu" >
+            <div class="menu-container">
+                <div class="wrapper">
+                    <div class="menu-item">
+                        <a class="faqpage menuright-text">FAQs</a>
+                        <div class="menu-item-revealer"></div>
+                    </div>
+                    <div class="menu-item">
+                        <a href="#" class="reviewspage menuright-text">Testimonials</a>
+                        <div class="menu-item-revealer"></div>
+                    </div>
+                    <div class="menu-item">
+                        <a href="#" class="contactpage menuright-text">Contact</a>
+                        <div class="menu-item-revealer"></div>
+                    </div>
+                </div>
+                <div class="wrapper">
+                    <div class="menu-item" style="font-size: 1rem !important;">
+                        <a href="#"  style="font-size: 1rem !important;">@ zaki bouchebtoul</a>
+                        <div class="menu-item-revealer"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+<div class="column topspace">
+    <div class="container">
+        <div class="text" id="text">FAQ</div>
+       
+    </div>
+ 
+
+        <span class="subtitle">Your questions answered</span>
+        <svg width="300" height="10" class="firstdividersvg">
+            <rect x="10" y="10"  height="3" rx="3" ry="3"></rect>
+        </svg>
+        <span class="subsubtitle">To provide flexible, inspiring workspaces that foster creativity, collaboration, and professional growth.
+            We strive to create an environment where everyone can thrive.</span>
+
+            <div class="faq-container">
+                <div class="faq-item">
+                    <div class="faq-question">
+                        
+
+                        <span>What services do I offer?</span>
+                        <img src="/images/gifs/sentwhite.gif" alt="" style="height: 20px;" class="icon">
+                    </div>
+                    <div class="faq-answer">
+                        I offer a range of development services, including: website development, mobile app development, AI solutions ,software development                    </div>
+                </div>
+                <div class="line-container">
+                    <div class="line"></div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <span>What technologies do I use?</span>
+                        <img src="/images/gifs/sentwhite.gif" alt="" style="height: 20px;" class="icon">
+                    </div>
+                    <div class="faq-answer">
+                        I work with a wide range of technologies to build high-quality web, mobile, and software solutions. My tech stack includes: <br><br>
+
+                        <b>Frontend Development:</b> HTML, CSS, JavaScript, React.js, Next.js, Webflow, WordPress <br>
+                        <b>Backend Development:</b> Node.js, Python, Java <br>
+                        <b>Mobile Development:</b> Flutter <br>
+                        <b>Database Management:</b> MongoDB, Firebase<br>
+                        <b>CMS & No-Code Platforms:</b>  WordPress, Webflow <br><br>
+                        <b></b>I choose the best technology stack based on the project’s requirements, ensuring performance, scalability, and efficiency.                     </div>
+                </div>
+                <div class="line-container">
+                    <div class="line1"></div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <span>Do I work on custom projects?</span>
+                        <img src="/images/gifs/sentwhite.gif" alt="" style="height: 20px;" class="icon">
+                    </div>
+                    <div class="faq-answer">
+                        Yes, I work on custom projects tailored to specific needs. Whether you need a custom website, mobile app, or software solution, I can develop it from scratch or modify existing systems to enhance functionality. I also provide consulting to help refine project ideas, choose the right technologies, and optimize development workflows.                    </div>
+                </div>
+                <div class="line-container">
+                    <div class="line2"></div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <span>Do I require an upfront payment?</span>
+                        <img src="/images/gifs/sentwhite.gif" alt="" style="height: 20px;" class="icon">
+                    </div>
+                    <div class="faq-answer">
+                        Yes, I require an upfront payment to begin a project. This helps secure the project slot and ensures commitment from both sides. The percentage of the upfront payment depends on the project's scope and complexity. I provide clear payment terms before starting any work to ensure transparency.                </div>
+              
+            </div>
+            <div class="line-container">
+                <div class="line2"></div>
+            </div>
+            <div class="faq-item">
+                <div class="faq-question">
+                    <span>How can clients contact me?</span>
+                    <img src="/images/gifs/sentwhite.gif" alt="" style="height: 20px;" class="icon">
+                </div>
+                <div class="faq-answer">
+                    Clients can contact me through multiple channels: <br><br>
+
+                    <b>Email:</b> zaki.bouchebtoul97@gmail.com <br>
+                    <b>LinkedIn:</b>  <a href="https://www.linkedin.com/in/zaki-bouchebtoul-370a72236" style="color: #FCFCFC;font-weight:700">Bouchebtoul Zaki LinkedIn</a> <br>
+                    <b>Fiverr:</b> <a href="https://www.fiverr.com/bouchebtoul?public_mode=true" style="color: #FCFCFC;font-weight:700">Fiverr Profile</a>  <br>
+                    <b>Upwork:</b> <a href="https://www.upwork.com/freelancers/~01f72734c45804a9e9?viewMode=1" style="color: #FCFCFC;font-weight:700">Upwork Profile</a> <br><br>
+                    Feel free to reach out through any of these platforms, and I’ll respond as soon as possible!          
+        </div>
+     
+            
+</div>
+
+<div class="line-container">
+    <div class="line2"></div>
+</div>
+<div class="faq-item">
+    <div class="faq-question">
+        <span>Can you build both frontend and backend applications?</span>
+        <img src="/images/gifs/sentwhite.gif" alt="" style="height: 20px;" class="icon">
+    </div>
+    <div class="faq-answer">
+        Yes, I specialize in both frontend and backend development, allowing me to build full-stack applications. On the frontend, I use technologies like React.js, Next.js, Webflow, and WordPress to create user-friendly interfaces. On the backend, I work with Node.js, Python, and Java, along with databases like MongoDB and Firebase, to ensure robust functionality and seamless data management.         
+</div>
+
+
+</div>
+
+<div class="line-container">
+<div class="line2"></div>
+</div>
+
+
+<script src="/scripts/faqscript.js"></script>
+<script src="/scripts/script.js" type="module"></script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/CSSRulePlugin.min.js"></script>
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+<script src="scripts/cursor.js" type="module"></script>
+<script src="https://unpkg.com/@studio-freight/lenis@latest"></script>
+
+<script>
+  // Initialize Lenis
+  const lenis = new Lenis({
+    duration: 1.2, // Adjust speed of smooth scrolling
+    easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)), // Smooth ease
+    smooth: true
+  });
+
+  function raf(time) {
+    lenis.raf(time);
+    requestAnimationFrame(raf);
+  }
+  requestAnimationFrame(raf);
+
+  // Update GSAP ScrollTrigger to work with Lenis
+  lenis.on('scroll', ScrollTrigger.update);
+
+
+
+</script>
+</body>
+</html>
